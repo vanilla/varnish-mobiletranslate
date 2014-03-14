@@ -2,13 +2,13 @@
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
-# modification, are permitted provided that the following conditions are met: 
-# 
+# modification, are permitted provided that the following conditions are met:
+#
 # 1. Redistributions of source code must retain the above copyright notice, this
-#    list of conditions and the following disclaimer. 
+#    list of conditions and the following disclaimer.
 # 2. Redistributions in binary form must reproduce the above copyright notice,
 #    this list of conditions and the following disclaimer in the documentation
-#    and/or other materials provided with the distribution. 
+#    and/or other materials provided with the distribution.
 #
 # THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
 # ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
@@ -20,9 +20,9 @@
 # ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-# 
+#
 # The views and conclusions contained in the software and documentation are those
-# of the authors and should not be interpreted as representing official policies, 
+# of the authors and should not be interpreted as representing official policies,
 # either expressed or implied, of the FreeBSD Project
 # mobile_detect.vcl - Drop-in varnish solution to mobile user detection based on the Mobile-Detect library
 #
@@ -31,7 +31,7 @@
 # Author: Willem Kappers
 
 sub devicedetect {
-	#Based on Mobile detect 2.7.9	
+	#Based on Mobile detect 2.7.9
 	#https://github.com/serbanghita/Mobile-Detect
 	unset req.http.X-UA-Device;
 	set req.http.X-UA-Device = "desktop";
@@ -185,7 +185,7 @@ sub devicedetect {
 		   (req.http.User-Agent ~ "(?i)Hudl HT7S3") ||
 		   (req.http.User-Agent ~ "(?i)T-Hub2") ||
 		   (req.http.User-Agent ~ "(?i)Android.*\b97D\b|Tablet(?!.*PC)|ViewPad7|BNTV250A|MID-WCDMA|LogicPD Zoom2|\bA7EB\b|CatNova8|A1_07|CT704|CT1002|\bM721\b|rk30sdk|\bEVOTAB\b|M758A|ET904|ALUMIUM10|Smartfren Tab")) {
-			set req.http.X-UA-Device = "mobile;tablet";
+			set req.http.X-UA-Device = "tablet";
 		}
 
 	}
