@@ -31,7 +31,7 @@
 # Author: Willem Kappers
 
 sub devicedetect {
-	#Based on Mobile detect 2.8.3	
+	#Based on Mobile detect 2.8.3
 	#https://github.com/serbanghita/Mobile-Detect
 	unset req.http.X-UA-Device;
 	set req.http.X-UA-Device = "desktop";
@@ -197,6 +197,7 @@ sub devicedetect {
 		   (req.http.User-Agent ~ "(?i)Hudl HT7S3") ||
 		   (req.http.User-Agent ~ "(?i)T-Hub2") ||
 		   (req.http.User-Agent ~ "(?i)Android.*\b97D\b|Tablet(?!.*PC)|BNTV250A|MID-WCDMA|LogicPD Zoom2|\bA7EB\b|CatNova8|A1_07|CT704|CT1002|\bM721\b|rk30sdk|\bEVOTAB\b|M758A|ET904|ALUMIUM10|Smartfren Tab|Endeavour 1010|Tablet-PC-4")) {
+
 			set req.http.X-UA-Device = "tablet";
 		}
 
